@@ -1,0 +1,116 @@
+test_cli_placement_saves_without_confirmation (test_interface_regression.InterfaceRegressionTests.test_cli_placement_saves_without_confirmation)
+Preservation: individual place commands act immediately, unlike the menu. ... ok
+test_cli_quote_converts_quantity_and_uses_defaults (test_interface_regression.InterfaceRegressionTests.test_cli_quote_converts_quantity_and_uses_defaults)
+Normal/preservation: typed input becomes an integer and JSON stays usable. ... ok
+test_cli_rejects_quantity_text_without_saving (test_interface_regression.InterfaceRegressionTests.test_cli_rejects_quantity_text_without_saving)
+Invalid: parser failures must report status 2 rather than create state. ... ok
+test_cli_reports_service_rejection_without_saving (test_interface_regression.InterfaceRegressionTests.test_cli_reports_service_rejection_without_saving)
+Invalid: a well-formed command with an unknown product must fail cleanly. ... ok
+test_menu_confirmed_placement_is_persisted (test_interface_regression.InterfaceRegressionTests.test_menu_confirmed_placement_is_persisted)
+Normal/preservation: confirmation connects menu input to a saved order. ... ok
+test_menu_declining_cancellation_preserves_existing_state (test_interface_regression.InterfaceRegressionTests.test_menu_declining_cancellation_preserves_existing_state)
+Preservation: declining cancellation must not rewrite or alter an order. ... ok
+test_menu_declining_placement_leaves_no_order_or_save_file (test_interface_regression.InterfaceRegressionTests.test_menu_declining_placement_leaves_no_order_or_save_file)
+Preservation: a displayed quote is not permission to change saved data. ... ok
+test_menu_recovers_after_invalid_request_and_allows_valid_quote (test_interface_regression.InterfaceRegressionTests.test_menu_recovers_after_invalid_request_and_allows_valid_quote)
+Invalid/preservation: a rejected request must not terminate the menu. ... ok
+test_menu_reenters_invalid_quantity_and_keeps_request_defaults (test_interface_regression.InterfaceRegressionTests.test_menu_reenters_invalid_quantity_and_keeps_request_defaults)
+Invalid/preservation: re-enter an item after noninteger text, with defaults. ... ok
+test_delivery_becomes_free_at_exact_net_threshold (test_service_regression.BoundaryBehaviorTests.test_delivery_becomes_free_at_exact_net_threshold) ... ok
+test_delivery_threshold_uses_amount_after_student_discount (test_service_regression.BoundaryBehaviorTests.test_delivery_threshold_uses_amount_after_student_discount) ... ok
+test_duplicate_lines_at_stock_limit_are_accepted (test_service_regression.BoundaryBehaviorTests.test_duplicate_lines_at_stock_limit_are_accepted) ... ok
+test_minimum_quantity_one_is_accepted (test_service_regression.BoundaryBehaviorTests.test_minimum_quantity_one_is_accepted) ... ok
+test_new_session_has_empty_history_without_creating_file (test_service_regression.BoundaryBehaviorTests.test_new_session_has_empty_history_without_creating_file) ... ok
+test_ordering_exact_stock_succeeds_and_further_request_is_rejected (test_service_regression.BoundaryBehaviorTests.test_ordering_exact_stock_succeeds_and_further_request_is_rejected) ... ok
+test_place_student_discount_at_exact_threshold (test_service_regression.BoundaryBehaviorTests.test_place_student_discount_at_exact_threshold) ... FAIL
+test_quote_student_discount_at_exact_threshold (test_service_regression.BoundaryBehaviorTests.test_quote_student_discount_at_exact_threshold) ... FAIL
+test_student_below_discount_threshold_pays_full_price (test_service_regression.BoundaryBehaviorTests.test_student_below_discount_threshold_pays_full_price) ... ok
+test_zero_negative_and_above_limit_quantities_are_rejected (test_service_regression.BoundaryBehaviorTests.test_zero_negative_and_above_limit_quantities_are_rejected) ... ok
+test_empty_and_malformed_item_collections_are_rejected (test_service_regression.InvalidRequestTests.test_empty_and_malformed_item_collections_are_rejected) ... ok
+test_late_invalid_item_preserves_prior_order_stock_and_next_id (test_service_regression.InvalidRequestTests.test_late_invalid_item_preserves_prior_order_stock_and_next_id) ... ok
+test_malformed_save_file_reports_error_without_resetting_it (test_service_regression.InvalidRequestTests.test_malformed_save_file_reports_error_without_resetting_it) ... ok
+test_non_integer_quantities_are_rejected_by_service (test_service_regression.InvalidRequestTests.test_non_integer_quantities_are_rejected_by_service) ... ok
+test_placement_rejects_duplicate_lines_without_changing_state (test_service_regression.InvalidRequestTests.test_placement_rejects_duplicate_lines_without_changing_state) ... FAIL
+test_quote_rejects_duplicate_lines_exceeding_stock (test_service_regression.InvalidRequestTests.test_quote_rejects_duplicate_lines_exceeding_stock) ... FAIL
+test_unknown_customer_fulfillment_and_product_are_rejected (test_service_regression.InvalidRequestTests.test_unknown_customer_fulfillment_and_product_are_rejected) ... ok
+test_unknown_order_lookup_and_cancel_do_not_change_saved_data (test_service_regression.InvalidRequestTests.test_unknown_order_lookup_and_cancel_do_not_change_saved_data) ... ok
+test_quote_multiple_products_has_expected_lines_and_total (test_service_regression.NormalBehaviorTests.test_quote_multiple_products_has_expected_lines_and_total) ... ok
+test_student_delivery_placement_saves_prices_stock_and_order (test_service_regression.NormalBehaviorTests.test_student_delivery_placement_saves_prices_stock_and_order) ... ok
+test_cancellation_preserves_order_details_history_and_monotonic_ids (test_service_regression.PreserveBehaviorTests.test_cancellation_preserves_order_details_history_and_monotonic_ids) ... ok
+test_cancelling_again_does_not_restore_stock_twice (test_service_regression.PreserveBehaviorTests.test_cancelling_again_does_not_restore_stock_twice) ... FAIL
+test_placement_rechecks_stock_after_an_earlier_quote (test_service_regression.PreserveBehaviorTests.test_placement_rechecks_stock_after_an_earlier_quote) ... ok
+test_quote_and_placement_agree_on_all_pricing_and_item_fields (test_service_regression.PreserveBehaviorTests.test_quote_and_placement_agree_on_all_pricing_and_item_fields) ... ok
+test_quotes_and_catalog_do_not_create_a_save_file (test_service_regression.PreserveBehaviorTests.test_quotes_and_catalog_do_not_create_a_save_file) ... ok
+test_quotes_do_not_modify_an_existing_saved_session (test_service_regression.PreserveBehaviorTests.test_quotes_do_not_modify_an_existing_saved_session) ... ok
+test_cancel_order_restores_stock (test_smoke.OrderSmokeTests.test_cancel_order_restores_stock) ... ok
+test_order_can_be_reopened (test_smoke.OrderSmokeTests.test_order_can_be_reopened) ... ok
+test_regular_pickup_quote (test_smoke.OrderSmokeTests.test_regular_pickup_quote) ... ok
+test_student_delivery_quote (test_smoke.OrderSmokeTests.test_student_delivery_quote) ... ok
+
+======================================================================
+FAIL: test_place_student_discount_at_exact_threshold (test_service_regression.BoundaryBehaviorTests.test_place_student_discount_at_exact_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 115, in test_place_student_discount_at_exact_threshold
+    self.assertEqual(order["discount_cents"], 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 500
+
+======================================================================
+FAIL: test_quote_student_discount_at_exact_threshold (test_service_regression.BoundaryBehaviorTests.test_quote_student_discount_at_exact_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 108, in test_quote_student_discount_at_exact_threshold
+    self.assertEqual(quote["discount_cents"], 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 500
+
+======================================================================
+FAIL: test_placement_rejects_duplicate_lines_without_changing_state (test_service_regression.InvalidRequestTests.test_placement_rejects_duplicate_lines_without_changing_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 216, in test_placement_rejects_duplicate_lines_without_changing_state
+    self.assert_rejected_without_changes(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.service.place_order, "regular",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        [{"product_id": "notebook", "quantity": 12},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         {"product_id": "notebook", "quantity": 9}])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 30, in assert_rejected_without_changes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_quote_rejects_duplicate_lines_exceeding_stock (test_service_regression.InvalidRequestTests.test_quote_rejects_duplicate_lines_exceeding_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 208, in test_quote_rejects_duplicate_lines_exceeding_stock
+    self.assert_rejected_without_changes(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.service.quote, "regular",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        [{"product_id": "notebook", "quantity": 12},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         {"product_id": "notebook", "quantity": 9}])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 30, in assert_rejected_without_changes
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_cancelling_again_does_not_restore_stock_twice (test_service_regression.PreserveBehaviorTests.test_cancelling_again_does_not_restore_stock_twice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_service_regression.py", line 302, in test_cancelling_again_does_not_restore_stock_twice
+    self.assertEqual(self.stock()["notebook"], 20)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 22 != 20
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.019s
+
+FAILED (failures=5)

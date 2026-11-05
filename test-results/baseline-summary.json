@@ -1,0 +1,101 @@
+{
+  "original": {
+    "project": "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk",
+    "command": "python3 -m unittest discover -s tests -v",
+    "python": "3.15.2",
+    "exit_status": 0,
+    "ran": 4,
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "failed_tests": [],
+    "time_local": "2026-11-04T22:44:38-05:00"
+  },
+  "expanded": {
+    "project": "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk",
+    "command": "python3 -m unittest discover -s tests -v",
+    "python": "3.15.2",
+    "exit_status": 1,
+    "ran": 39,
+    "passed": 34,
+    "failed": 5,
+    "errors": 0,
+    "failed_tests": [
+      "test_place_student_discount_at_exact_threshold",
+      "test_quote_student_discount_at_exact_threshold",
+      "test_placement_rejects_duplicate_lines_without_changing_state",
+      "test_quote_rejects_duplicate_lines_exceeding_stock",
+      "test_cancelling_again_does_not_restore_stock_twice"
+    ],
+    "time_local": "2026-11-04T22:46:59-05:00"
+  },
+  "defect_observations": {
+    "quote_discount_threshold": {
+      "subtotal_cents": 5000,
+      "discount_cents": 0,
+      "total_cents": 5000
+    },
+    "quote_duplicate_stock": {
+      "items": [
+        {
+          "product_id": "notebook",
+          "quantity": 12
+        },
+        {
+          "product_id": "notebook",
+          "quantity": 9
+        }
+      ],
+      "rejected": false,
+      "notebook_stock": 20,
+      "save_file_created": false,
+      "saved_bytes_unchanged": true,
+      "history_count": 0,
+      "next_order_number": 1,
+      "returned_order_id": null
+    },
+    "place_order_discount_threshold": {
+      "subtotal_cents": 5000,
+      "discount_cents": 0,
+      "total_cents": 5000
+    },
+    "place_order_duplicate_stock": {
+      "items": [
+        {
+          "product_id": "notebook",
+          "quantity": 12
+        },
+        {
+          "product_id": "notebook",
+          "quantity": 9
+        }
+      ],
+      "rejected": false,
+      "notebook_stock": -1,
+      "save_file_created": true,
+      "saved_bytes_unchanged": false,
+      "history_count": 2,
+      "next_order_number": 3,
+      "returned_order_id": "ORD-0002"
+    },
+    "repeat_cancellation": {
+      "stock_after_first_cancel": 20,
+      "stock_after_second_cancel": 22,
+      "history_count": 1
+    }
+  },
+  "source_commit": "82ed75e0714e50c086a13ee491f51b349814d8a4",
+  "implementation_sha256": {
+    "supplydesk/service.py": "18992222e4e7201aee7759a1a00081ad43e87acc1004114727a0d2700f5a9e57",
+    "supplydesk/__init__.py": "1e82a386e9c4111aef35aa009dcf76f2e3cd7717b4dbe7c7b030b9e9643ba53c",
+    "supplydesk/menu.py": "1677681d024c435627a0c0c28c3f39eb9c5ec0d380420fa1a1f7c5f38bc5dd3a",
+    "supplydesk/cli.py": "d8fd56ca776d8ea46330703bedb7721cc79dbea2814ddee30c3883af6baf00e5",
+    "supplydesk/storage.py": "19c453a5f0fecbba183abd73c28bd0d89d540900a72e60364ab1b908b147eff7",
+    "supplydesk/catalog.json": "e9938cf61d9ff65c06461cf1d209fdb1e356c0705e43d084d90cd4e59dff1469",
+    "supplydesk/__main__.py": "4855ae57d079e35dce28255f4b25477cb97f3dee8f29e68bba7beb175c5aa0d0"
+  },
+  "original_test_sha256": {
+    "tests/test_smoke.py": "758d6659ba7f66985415a1d26c4b58f971578817baa04d3152ea05dc8a4d5f2b"
+  },
+  "implementation_and_original_tests_unchanged": true
+}
