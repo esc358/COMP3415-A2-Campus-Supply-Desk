@@ -85,6 +85,10 @@ Then:
 
 With sufficient stock available, the quote should show a **$10.00 total**.
 
+The fulfillment prompt offers `pickup`, `delivery`, and `express`. Pickup is free. Standard `delivery` costs **$6.00 CAD**, or is free when the merchandise subtotal after discount is at least **$100.00 CAD**. `express` always costs **$12.00 CAD**, including orders that qualify for free standard delivery. Student discounts apply to merchandise only. Leaving the customer and fulfillment prompts blank still selects `regular` and `pickup`.
+
+For the same two notebooks, choosing `express` gives a **$22.00 total**.
+
 No order has been placed. To purchase items, choose **3 — Place an order** from the menu and follow the prompts.
 
 ## 3. Running the tests
@@ -172,7 +176,10 @@ You can perform operations directly instead of using the menu. These commands ar
 python -m supplydesk catalog
 python -m supplydesk quote --customer regular --item notebook:2
 python -m supplydesk quote --customer student --fulfillment delivery --item hoodie:2
+python -m supplydesk quote --customer student --fulfillment express --item hoodie:2
 ```
+
+The express example returns a total of **8,400 cents ($84.00 CAD)**: $80.00 merchandise minus an $8.00 student discount plus the $12.00 express fee. Both `quote` and `place` accept `--fulfillment pickup`, `--fulfillment delivery`, or `--fulfillment express`. Omitting `--customer` and `--fulfillment` uses `regular` and `pickup`.
 
 Use repeated `--item` options for multiple items:
 
@@ -184,6 +191,7 @@ python -m supplydesk quote --customer student --item hoodie:1 --item mug:1
 
 ```sh
 python -m supplydesk place --customer regular --item mug:1
+python -m supplydesk place --customer regular --fulfillment express --item notebook:2
 python -m supplydesk orders
 python -m supplydesk show ORD-0001
 python -m supplydesk cancel ORD-0001
@@ -194,6 +202,8 @@ Replace `ORD-0001` with the actual ID returned when you place your order.
 Unlike the interactive menu, individual `place` and `cancel` commands perform the action immediately without asking for confirmation.
 
 Individual commands display JSON. Prices are expressed in cents: for example, `"total_cents": 1000` means **CAD $10.00**.
+
+Express quotes and orders use the existing fields: `"fulfillment": "express"` and `"delivery_cents": 1200`. A saved express order keeps its fulfillment, items, discount, fee, and total when viewed, reopened, or cancelled.
 
 Successful commands return exit status `0`. Rejected input returns exit status `2` and an error message.
 
@@ -213,4 +223,5 @@ These commands use the same orders and stock as the interactive menu opened with
 ```sh
 python -m supplydesk --help
 python -m supplydesk quote --help
+python -m supplydesk place --help
 ```
