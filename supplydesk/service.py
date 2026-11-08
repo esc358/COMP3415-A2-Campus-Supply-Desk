@@ -39,26 +39,8 @@ class OrderService:
 
     def place_order(self, customer_type, items, fulfillment="pickup"):
         state = self.store.load()
-        self._validate_request(customer_type, items, fulfillment)
-        lines, subtotal = self._build_item_lines(state, items)
-        discount, delivery = self._calculate_discount_and_delivery(
-            customer_type, subtotal, fulfillment
-        )
-        order = {
-            "order_id": "ORD-" + str(state["next_order_number"]).zfill(4),
-            "status": "placed",
-            "customer_type": customer_type,
-            "fulfillment": fulfillment,
-            "items": lines,
-            "subtotal_cents": subtotal,
-            "discount_cents": discount,
-            "delivery_cents": delivery,
-            "total_cents": subtotal - discount + delivery,
-        }
-        for line in lines:
-            for product in state["catalog"]:
-                if product["product_id"] == line["product_id"]:
-                    product["stock"] -= line["quantity"]
+        order = self._build_order(state, customer_type, items, fulfillment)
+        self._deduct_stock(state, order["items"])
         state["next_order_number"] += 1
         state["orders"].append(order)
         self.store.save(state)
@@ -140,3 +122,27 @@ class OrderService:
         if fulfillment == "delivery" and subtotal - discount < FREE_DELIVERY_THRESHOLD_CENTS:
             delivery = DELIVERY_FEE_CENTS
         return discount, delivery
+
+    def _build_order(self, state, customer_type, items, fulfillment):
+        self._validate_request(customer_type, items, fulfillment)
+        lines, subtotal = self._build_item_lines(state, items)
+        discount, delivery = self._calculate_discount_and_delivery(
+            customer_type, subtotal, fulfillment
+        )
+        return {
+            "order_id": "ORD-" + str(state["next_order_number"]).zfill(4),
+            "status": "placed",
+            "customer_type": customer_type,
+            "fulfillment": fulfillment,
+            "items": lines,
+            "subtotal_cents": subtotal,
+            "discount_cents": discount,
+            "delivery_cents": delivery,
+            "total_cents": subtotal - discount + delivery,
+        }
+
+    def _deduct_stock(self, state, lines):
+        for line in lines:
+            for product in state["catalog"]:
+                if product["product_id"] == line["product_id"]:
+                    product["stock"] -= line["quantity"]

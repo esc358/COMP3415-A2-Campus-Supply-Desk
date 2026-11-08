@@ -1,0 +1,48 @@
+test_boundary_quantity_one (test_safety_net.SafetyNetTests.test_boundary_quantity_one) ... ok
+test_boundary_student_discount_at_fifty_dollars (test_safety_net.SafetyNetTests.test_boundary_student_discount_at_fifty_dollars) ... FAIL
+test_boundary_zero_quantity (test_safety_net.SafetyNetTests.test_boundary_zero_quantity) ... ok
+test_invalid_customer_product_or_fulfillment (test_safety_net.SafetyNetTests.test_invalid_customer_product_or_fulfillment) ... ok
+test_invalid_duplicate_items_exceed_stock (test_safety_net.SafetyNetTests.test_invalid_duplicate_items_exceed_stock) ... FAIL
+test_invalid_quantity_types (test_safety_net.SafetyNetTests.test_invalid_quantity_types) ... ok
+test_normal_multiple_product_quote (test_safety_net.SafetyNetTests.test_normal_multiple_product_quote) ... ok
+test_normal_order_history (test_safety_net.SafetyNetTests.test_normal_order_history) ... ok
+test_normal_student_delivery_order (test_safety_net.SafetyNetTests.test_normal_student_delivery_order) ... ok
+test_preserve_placement_rechecks_stock (test_safety_net.SafetyNetTests.test_preserve_placement_rechecks_stock) ... ok
+test_preserve_quote_does_not_change_saved_data (test_safety_net.SafetyNetTests.test_preserve_quote_does_not_change_saved_data) ... ok
+test_preserve_repeated_cancellation (test_safety_net.SafetyNetTests.test_preserve_repeated_cancellation) ... FAIL
+test_cancel_order_restores_stock (test_smoke.OrderSmokeTests.test_cancel_order_restores_stock) ... ok
+test_order_can_be_reopened (test_smoke.OrderSmokeTests.test_order_can_be_reopened) ... ok
+test_regular_pickup_quote (test_smoke.OrderSmokeTests.test_regular_pickup_quote) ... ok
+test_student_delivery_quote (test_smoke.OrderSmokeTests.test_student_delivery_quote) ... ok
+
+======================================================================
+FAIL: test_boundary_student_discount_at_fifty_dollars (test_safety_net.SafetyNetTests.test_boundary_student_discount_at_fifty_dollars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_safety_net.py", line 104, in test_boundary_student_discount_at_fifty_dollars
+    self.assertEqual(quote["discount_cents"], 500)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 500
+
+======================================================================
+FAIL: test_invalid_duplicate_items_exceed_stock (test_safety_net.SafetyNetTests.test_invalid_duplicate_items_exceed_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_safety_net.py", line 168, in test_invalid_duplicate_items_exceed_stock
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_preserve_repeated_cancellation (test_safety_net.SafetyNetTests.test_preserve_repeated_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_safety_net.py", line 220, in test_preserve_repeated_cancellation
+    self.assertEqual(self.stock("notebook"), 20)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 22 != 20
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.008s
+
+FAILED (failures=3)

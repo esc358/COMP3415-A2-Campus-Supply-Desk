@@ -1,0 +1,37 @@
+Step 3: public behavior comparison
+Compared against: Task 2 baseline (d26a1e1), Step 2 (1b17017)
+Compared returned JSON (including key order), exception types/messages,
+and saved file bytes after every operation, reopening the service each time.
+
+PASS: regular pickup and history (5 operations; matches both earlier versions)
+PASS: student delivery with multiple products (2 operations; matches both earlier versions)
+PASS: existing discount threshold defect (2 operations; matches both earlier versions)
+PASS: free regular delivery (2 operations; matches both earlier versions)
+PASS: delivery fee after student discount (2 operations; matches both earlier versions)
+PASS: minimum quantity (2 operations; matches both earlier versions)
+PASS: existing duplicate stock defect (3 operations; matches both earlier versions)
+PASS: stock rechecked after quote (3 operations; matches both earlier versions)
+PASS: existing repeated cancellation defect (5 operations; matches both earlier versions)
+PASS: unknown order IDs (3 operations; matches both earlier versions)
+PASS: malformed saved state exception order (2 operations; matches both earlier versions)
+PASS: malformed JSON (2 operations; matches both earlier versions)
+PASS: exact stock followed by shortage (4 operations; matches both earlier versions)
+PASS: duplicate lines exactly matching stock (3 operations; matches both earlier versions)
+PASS: late invalid item preserves prior data and next ID (5 operations; matches both earlier versions)
+PASS: cancelled IDs are not reused (4 operations; matches both earlier versions)
+PASS: invalid quantity 0 (3 operations; matches both earlier versions)
+PASS: invalid quantity -1 (3 operations; matches both earlier versions)
+PASS: invalid quantity 100 (3 operations; matches both earlier versions)
+PASS: invalid quantity True (3 operations; matches both earlier versions)
+PASS: invalid quantity 1.5 (3 operations; matches both earlier versions)
+PASS: invalid quantity '2' (3 operations; matches both earlier versions)
+PASS: unknown customer (3 operations; matches both earlier versions)
+PASS: unknown fulfillment (3 operations; matches both earlier versions)
+PASS: unknown product (3 operations; matches both earlier versions)
+PASS: empty items (3 operations; matches both earlier versions)
+PASS: items not a list (3 operations; matches both earlier versions)
+PASS: item not a dictionary (3 operations; matches both earlier versions)
+PASS: missing product ID (3 operations; matches both earlier versions)
+PASS: missing quantity (3 operations; matches both earlier versions)
+
+All 30 scenarios matched (91 operations per version).
