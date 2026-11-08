@@ -1,0 +1,20 @@
+CR-01, Step 1: service implementation and acceptance tests
+Baseline commit: 86462c1
+
+Pre-change baseline: 16 tests, 13 passed, 3 failed.
+New acceptance tests before implementation: 9 tests, 2 passed, 7 errors (express rejected).
+New acceptance tests after implementation: all 9 passed.
+Full suite after implementation: 25 tests, 22 passed, same 3 baseline failures, no errors.
+Every existing test retained its pre-change result.
+
+Known baseline failures, retained separately from CR-01 acceptance:
+- test_boundary_student_discount_at_fifty_dollars (test_safety_net.SafetyNetTests.test_boundary_student_discount_at_fifty_dollars)
+- test_invalid_duplicate_items_exceed_stock (test_safety_net.SafetyNetTests.test_invalid_duplicate_items_exceed_stock)
+- test_preserve_repeated_cancellation (test_safety_net.SafetyNetTests.test_preserve_repeated_cancellation)
+
+Commands:
+python3 -m unittest tests.test_express_service -v
+python3 -m unittest discover -s tests -v
+
+Service review and git diff --check passed.
+CLI, menu, and documentation updates remain for later approved steps.

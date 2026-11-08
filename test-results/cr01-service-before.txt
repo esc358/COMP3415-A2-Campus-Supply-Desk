@@ -1,0 +1,111 @@
+test_express_fee_applies_when_standard_delivery_is_free (tests.test_express_service.ExpressServiceTests.test_express_fee_applies_when_standard_delivery_is_free) ... ERROR
+test_express_fee_does_not_qualify_merchandise_for_discount (tests.test_express_service.ExpressServiceTests.test_express_fee_does_not_qualify_merchandise_for_discount) ... ERROR
+test_express_order_preserves_quote_and_saved_history (tests.test_express_service.ExpressServiceTests.test_express_order_preserves_quote_and_saved_history) ... ERROR
+test_express_placement_rechecks_stock_after_quote (tests.test_express_service.ExpressServiceTests.test_express_placement_rechecks_stock_after_quote) ... ERROR
+test_pickup_default_and_standard_delivery_prices_are_unchanged (tests.test_express_service.ExpressServiceTests.test_pickup_default_and_standard_delivery_prices_are_unchanged) ... ok
+test_regular_express_two_notebooks (tests.test_express_service.ExpressServiceTests.test_regular_express_two_notebooks) ... ERROR
+test_student_express_fee_applies_above_free_delivery_threshold (tests.test_express_service.ExpressServiceTests.test_student_express_fee_applies_above_free_delivery_threshold) ... ERROR
+test_student_express_two_hoodies (tests.test_express_service.ExpressServiceTests.test_student_express_two_hoodies) ... ERROR
+test_unsupported_fulfillment_preserves_existing_saved_data (tests.test_express_service.ExpressServiceTests.test_unsupported_fulfillment_preserves_existing_saved_data) ... ok
+
+======================================================================
+ERROR: test_express_fee_applies_when_standard_delivery_is_free (tests.test_express_service.ExpressServiceTests.test_express_fee_applies_when_standard_delivery_is_free)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 52, in test_express_fee_applies_when_standard_delivery_is_free
+    express = self.service.quote("regular", items, "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_express_fee_does_not_qualify_merchandise_for_discount (tests.test_express_service.ExpressServiceTests.test_express_fee_does_not_qualify_merchandise_for_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 77, in test_express_fee_does_not_qualify_merchandise_for_discount
+    quote = self.service.quote("student", [
+        {"product_id": "notebook", "quantity": 9},
+    ], "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_express_order_preserves_quote_and_saved_history (tests.test_express_service.ExpressServiceTests.test_express_order_preserves_quote_and_saved_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 94, in test_express_order_preserves_quote_and_saved_history
+    quote = self.service.quote("student", items, "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_express_placement_rechecks_stock_after_quote (tests.test_express_service.ExpressServiceTests.test_express_placement_rechecks_stock_after_quote)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 150, in test_express_placement_rechecks_stock_after_quote
+    quote = self.service.quote("regular", items, "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_regular_express_two_notebooks (tests.test_express_service.ExpressServiceTests.test_regular_express_two_notebooks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 20, in test_regular_express_two_notebooks
+    quote = self.service.quote("regular", [
+        {"product_id": "notebook", "quantity": 2},
+    ], "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_student_express_fee_applies_above_free_delivery_threshold (tests.test_express_service.ExpressServiceTests.test_student_express_fee_applies_above_free_delivery_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 66, in test_student_express_fee_applies_above_free_delivery_threshold
+    express = self.service.quote("student", items, "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+======================================================================
+ERROR: test_student_express_two_hoodies (tests.test_express_service.ExpressServiceTests.test_student_express_two_hoodies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/tests/test_express_service.py", line 40, in test_student_express_two_hoodies
+    quote = self.service.quote("student", [
+        {"product_id": "hoodie", "quantity": 2},
+    ], "express")
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 25, in quote
+    self._validate_request(customer_type, items, fulfillment)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/escl/Projects/COMP3415-A2-Campus-Supply-Desk/supplydesk/service.py", line 80, in _validate_request
+    raise ValueError("Fulfillment must be pickup or delivery.")
+ValueError: Fulfillment must be pickup or delivery.
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+FAILED (errors=7)

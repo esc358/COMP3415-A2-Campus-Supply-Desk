@@ -1,0 +1,14 @@
+test_express_fee_applies_when_standard_delivery_is_free (tests.test_express_service.ExpressServiceTests.test_express_fee_applies_when_standard_delivery_is_free) ... ok
+test_express_fee_does_not_qualify_merchandise_for_discount (tests.test_express_service.ExpressServiceTests.test_express_fee_does_not_qualify_merchandise_for_discount) ... ok
+test_express_order_preserves_quote_and_saved_history (tests.test_express_service.ExpressServiceTests.test_express_order_preserves_quote_and_saved_history) ... ok
+test_express_placement_rechecks_stock_after_quote (tests.test_express_service.ExpressServiceTests.test_express_placement_rechecks_stock_after_quote) ... ok
+test_pickup_default_and_standard_delivery_prices_are_unchanged (tests.test_express_service.ExpressServiceTests.test_pickup_default_and_standard_delivery_prices_are_unchanged) ... ok
+test_regular_express_two_notebooks (tests.test_express_service.ExpressServiceTests.test_regular_express_two_notebooks) ... ok
+test_student_express_fee_applies_above_free_delivery_threshold (tests.test_express_service.ExpressServiceTests.test_student_express_fee_applies_above_free_delivery_threshold) ... ok
+test_student_express_two_hoodies (tests.test_express_service.ExpressServiceTests.test_student_express_two_hoodies) ... ok
+test_unsupported_fulfillment_preserves_existing_saved_data (tests.test_express_service.ExpressServiceTests.test_unsupported_fulfillment_preserves_existing_saved_data) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.004s
+
+OK
